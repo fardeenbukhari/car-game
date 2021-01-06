@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    
+
+        <title>Page Title</title>
+    </head>
+    <body>
+    
+        <i class="fa fa-car-side" id="car">
+        </i>
+        <p id="param">VALUE</p>
+        <button id="left" value="1"><</button>
+        <button id="right" value="1">></button>
+<style>
+
+#car{
+    font-size:70px;
+}
+#left{
+position:absolute;
+width:50px;
+height:50px;
+top:90%;
+background:black;
+color:white;
+border-radius: 50%;
+outline:none;
+}
+#left:hover{
+color:cyan;
+}
+
+#right{
+position:absolute;
+left: 83%;
+width:50px;
+top:90%;
+color:white;
+background:black;
+height:50px;
+border-radius: 50%;
+outline:none;
+}
+#right:hover{
+color:cyan;
+}
+
+#param{
+    font-size:30px;
+    text-align:center;
+    background-color:black;
+    color:white;
+    outline:none;
+        
+}
+#bridge{
+    
+
+}
+
+
+</style>
+
+ <script>
+ //STORING IN VARIABLES
+ var value = document.getElementById("param");
+ var car = document.getElementById("car");
+ var left = document.getElementById("left");
+ var right = document.getElementById("right"); 
+ //FUNCTION CODE
+ right.addEventListener("click", function(){
+     car.style.marginLeft=left.value++ + "%";
+     value.innerHTML = left.value + "%";
+     if(left.value == 35){
+         value.innerHTML = "HALF WAY REACHED";
+     }
+ });
+ 
+ 
+ left.addEventListener("click", function(){
+     car.style.marginLeft=left.value-- + "%";
+     value.innerHTML = left.value + "%";
+     
+     if(left.value == 35){
+         value.innerHTML = "HALF WAY REACHED";
+     }
+ });
+ 
+
+
+    
+     
+     
+ </script>
+ <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+
+
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" />
+    </body>
+</html>
